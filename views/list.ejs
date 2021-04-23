@@ -1,0 +1,23 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+  <a href="/" id="goback">&larr;Back</a>
+  <div class="box">
+    <% newList.forEach(element => {%>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= element  %></p>
+      </div>
+    <% }); %>
+
+      <form class="item" action="/todo" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value= <%= type  %> >+</button>
+      </form>
+  </div>
+
+  <%- include("footer") -%>

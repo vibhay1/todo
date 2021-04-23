@@ -1,0 +1,11 @@
+<%- include('header') %>
+  <div class="box" id="heading">
+    <p>
+      <% Object.entries(menu).forEach(([key,value])=>{%>
+            <a href=<%=key %> class="menu" > <%= value %> </a>  
+      <%}); %>
+      </p>
+
+  </div>
+  <p class="box">Welcome to Home Page. feature will be available soon..<br/> Kindely use menu bar for some added feature</p>
+  <%- include('footer') %>
