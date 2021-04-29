@@ -1,0 +1,34 @@
+<%- include('header') %>
+  <div class="box" id="heading">
+    <p>
+      <% Object.entries(menu).forEach(([key,value])=>{%>
+            <a href=<%=path+'/'+key %> class="menu" > <%= value %> </a>  
+      <%}); %>
+      </p>    
+      
+  </div>
+  <div class="container">
+  <% posts.forEach(({title,content})=>{%>
+    <div class="box post">
+        <h3><%= title %></h3>
+        <div><%= content %></div>
+        </div>
+    
+ <% }) %> 
+
+ <!-- <form action="/compose" method="POST">
+    <div class="form-group" >
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" >
+    </div>
+    <div class="form-group">
+      <label for="postContent" class="form-label">Content</label>
+      <textarea name="content" rows="5" class="form-control" id="postContent"></textarea>
+    </div>
+    <div class="form-group" >
+        <button type="submit" class="btn btn-primary form-control" >Compose</button>
+      </div>
+    
+  </form> -->
+</div>
+  <%- include('footer') %>

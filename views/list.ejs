@@ -2,22 +2,25 @@
 
   <div class="box" id="heading">
     <h1>
-      <%= listTitle %>
+      <%= newList.name %>
     </h1>
   </div>
   <a href="/" id="goback">&larr;Back</a>
   <div class="box">
-    <% newList.forEach(element => {%>
+    <% newList['items'].forEach(element => {%>
+      <form action="/delete" method="POST">
       <div class="item">
-        <input type="checkbox">
-        <p><%= element  %></p>
+        <input type="hidden" name="listName" value="<%= newList.name   %>">
+        <input type="checkbox" value="<%= element._id %>" name="checkbox" onchange="this.form.submit()">
+        <p><%= element.name  %></p>
       </div>
+    </form>
     <% }); %>
 
-      <form class="item" action="/todo" method="post">
+      <form class="item" action="/<%=newList.name   %> " method="post">
         <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="list" value= <%= type  %> >+</button>
+        <button type="submit" name="list" value= <%= newList.name   %> >+</button>
       </form>
   </div>
-
+  
   <%- include("footer") -%>
