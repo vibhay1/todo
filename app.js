@@ -22,8 +22,6 @@ const itemSchema={name:String}; //design schema of collection how many field wil
 
 const Item=mongoose.model('item',itemSchema);// TO CREATE TABLE WITH 'Items' ONLY ENTER IN SINGULAR FORM OF 'Items' like 'item' SECOND PASS FIELD SCHEMA
 const List=mongoose.model('List',{name:String,items:[itemSchema]});
-let todoList=['Buy food','Cook food','Lunch food'];
-let workList=[];
 const menu={todo:'TO-DO', work:'WORK',about:'ABOUT'}
 app.get('/favicon.ico', (req, res) => res.status(204));
 app.get('/', (req, res) => {
