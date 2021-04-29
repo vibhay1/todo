@@ -2,7 +2,6 @@ const express = require('express');
 const bp = require('body-parser');
 const path = require('path');
 const mongoose=require('mongoose');
-const { post } = require('request');
 const date=require(path.join(__dirname,'/date.js'));
 const app = express();
 
